@@ -27,6 +27,7 @@
         <meta name="twitter:image" content="https://muh-ilham-pratama.github.io/portofolio/assets/images/logo.png">
 
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./assets//js/index.js"></script>
         <!-- <link rel="icon" type="image/x-icon" href="assets/images/logo.ico"> -->
         <link rel="canonical" href="https://muhammad-ilham-pratama.github.io/portofolio" />
         <link rel="stylesheet" href="assets/css/style.css">
@@ -35,54 +36,68 @@
     </head>
     <body>
         <section id="summary" class="bg-center bg-no-repeat bg-cover" style="background-image: url('assets/images/background.jpg');">
-            <div class="px-64 pt-5 flex flex-col gap-8">
-                <div class="bg-purple-400 grid grid-cols-3 justify-center text-white font-light">
-                    <div class="flex p-6 items-center gap-4">
+            <div class="xl:px-64 lg:px-20 px-5 pt-5 flex flex-col gap-8">
+                <div class="bg-purple-400 grid md:grid-cols-3 grid-cols-1 justify-center text-white font-light">
+                    <div class="flex lg:p-6 p-4 items-center gap-4">
                         <span class="material-symbols-outlined sm:text-4xl text-2xl">location_on</span>
                         <div class="flex flex-col">
-                            <div class="text-base tracking-wide">Jl. Bunga Vinolia No.2, Malang</div>
-                            <div class="text-base tracking-wide">Jawa Timur, Indonesia</div>
+                            <div class="text-xs lg:text-base tracking-wide">Jl. Bunga Vinolia No.2, Malang</div>
+                            <div class="text-xs lg:text-base tracking-wide">Jawa Timur, Indonesia</div>
                         </div>
                     </div>
-                    <div class="flex p-6 items-center gap-4">
+                    <div class="flex lg:p-6 p-4 items-center gap-4">
                         <span class="material-symbols-outlined sm:text-4xl text-2xl">call</span>
                         <div class="flex flex-col">
-                            <div class="text-base tracking-wide">(+62) 838-7102-8000</div>
-                            <div class="text-base tracking-wide">Mon - Fri, 09.00 - 21.00</div>
+                            <div class="text-xs lg:text-base tracking-wide">(+62) 838-7102-8000</div>
+                            <div class="text-xs lg:text-base tracking-wide">Mon - Fri, 09.00 - 21.00</div>
                         </div>
                     </div>
-                    <div class="flex p-6 items-center gap-4">
+                    <div class="flex lg:p-6 p-4 items-center gap-4">
                         <span class="material-symbols-outlined sm:text-4xl text-2xl">forum</span>
                         <div class="flex flex-col">
-                            <div class="text-base tracking-wide">ilham.formal@gmail.com</div>
-                            <div class="text-base tracking-wide">Reply In 24 Hours</div>
+                            <div class="text-xs lg:text-base tracking-wide">ilham.formal@gmail.com</div>
+                            <div class="text-xs lg:text-base tracking-wide">Reply In 24 Hours</div>
                         </div>
                     </div>
                 </div>
-                <div class="flex gap-4 justify-end">
-                    <button class="px-8 py-2.5 text-base text-white bg-purple-400 hover:bg-purple-500 outline-none" type="button">Download CV</button>
-                    <button class="px-8 py-2.5 text-base text-white bg-purple-400 hover:bg-purple-500 outline-none" type="button">Start Chat</button>
+                <div class="flex gap-4 md:justify-end justify-between">
+                    <a
+                        class="px-8 py-2.5 lg:text-base text-xs text-white bg-purple-400 hover:bg-purple-500 outline-none"
+                        href="./assets/files/Resume Ilham.docx"
+                        target="_blank"
+                        download
+                        onclick="download()"
+                    >
+                        Download CV
+                    </a>
+                    <a
+                        class="px-8 py-2.5 lg:text-base text-xs text-white bg-purple-400 hover:bg-purple-500 outline-none"
+                        target="_blank"
+                        href="https://wa.me/6283871028000"
+                    >
+                        Start Chat
+                    </a>
                 </div>
-                <div class="bg-white relative flex flex-col gap-6 items-center pt-36 mt-20 pb-5 w-3/4 place-self-center">
-                    <div class="w-48 h-48 absolute top-[-100px] left-[350px]">
-                        <img src="assets/images/photo.jpeg" class="rounded-full h-48 w-48 object-cover">
+                <div class="bg-white relative flex flex-col gap-6 items-center lg:pt-36 md:pt-24 pt-20 xl:mt-20 lg:mt-16 md:mt-14 mt-10 pb-5 xl:w-3/4 lg:w-3/4 w-full place-self-center">
+                    <div class="lg:w-48 lg:h-48 md:w-40 md:h-40 w-28 h-28 absolute xl:top-[-100px] md:-top-20 -top-10 xl:-[350px] lg:left-62">
+                        <img src="assets/images/photo.jpeg" class="rounded-full object-cover">
                     </div>
                     <div class="flex flex-col gap-2 items-center">
-                        <h2 class="font-bold text-4xl">Muh. Ilham Pratama</h2>
-                        <h3 class="text-purple-400 text-2xl tracking-wide">Software Engineer</h3>
+                        <h2 class="font-bold xl:text-4xl lg:text-3xl md:text-2xl text-base">Muh. Ilham Pratama</h2>
+                        <h3 class="text-purple-400 xl:text-2xl lg:text-xl md:text-base text-sm tracking-wide">Software Engineer</h3>
                     </div>
                     <div class="flex flex-col gap-2 items-center">
-                        <div class="flex gap-4">
-                            <h4 class="font-bold uppercase">Born :</h4>
-                            <h4>June 04, 1995</h4>
+                        <div class="flex gap-4 xl:text-base md:text-sm text-xs">
+                            <span class="font-bold uppercase">Born :</span>
+                            <span>June 04, 1995</span>
                         </div>
-                        <div class="flex gap-4">
-                            <h4 class="font-bold uppercase">Email :</h4>
-                            <h4>ilham.formal@gmail.com</h4>
+                        <div class="flex gap-4 xl:text-base md:text-sm text-xs">
+                            <span class="font-bold uppercase">Email :</span>
+                            <span>ilham.formal@gmail.com</span>
                         </div>
-                        <div class="flex gap-4">
-                            <h4 class="font-bold uppercase">Marital Status :</h4>
-                            <h4>Married</h4>
+                        <div class="flex gap-4 xl:text-base md:text-sm text-xs">
+                            <span class="font-bold uppercase">Marital Status :</span>
+                            <span>Married</span>
                         </div>
                     </div>
                     <div class="flex gap-5">
@@ -110,23 +125,23 @@
                 </div>
             </div>
         </section>
-        <section id="portofolio" class="bg-white px-64 pt-24 pb-10 flex flex-col gap-3">
-            <div class="bg-purple-400 w-14 h-3 rounded-xl"></div>
-            <div class="grid grid-cols-3 items-end justify-items-center">
+        <section id="portofolio" class="bg-white xl:px-64 lg:px-32 md:px-20 px-5 xl:pt-24 md:pt-16 pt-10 md:pb-10 pb-5 flex flex-col gap-3">
+            <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
+            <div class="md:grid md:grid-cols-3 md:gap-0 flex flex-col gap-5 md:items-end justify-items-between">
                 <div class="flex flex-col place-self-start gap-1">
-                    <div class="font-bold text-3xl">Portfolio</div>
-                    <div class="uppercase text-gray-500 font-medium tracking-wide text-sm">My Work</div>
+                    <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base">Portfolio</div>
+                    <div class="uppercase text-gray-500 font-medium tracking-wide lg:text-sm text-xs">My Work</div>
                 </div>
-                <ul class="flex gap-5 uppercase font-bold text-purple-400">
-                    <li class="cursor-pointer hover:text-violet-600 border-b-4 border-purple-400 pb-2">All</li>
-                    <li class="cursor-pointer hover:text-violet-600">Mobile Apps</li>
-                    <li class="cursor-pointer hover:text-violet-600">Website</li>
-                    <li class="cursor-pointer hover:text-violet-600">Dashboard</li>
+                <ul class="flex md:gap-5 gap-2 uppercase font-bold text-purple-400 md:col-span-2 whitespace-nowrap xl:text-base sm:text-sm text-xs">
+                    <li class="cursor-pointer hover:text-violet-600 border-b-4 border-purple-400 pb-2 w-fit">All</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit">Mobile Apps</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit">Website</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit">Dashboard</li>
                 </ul>
             </div>
         </section>
-        <section id="portofolio" class="py-10 px-5 md:px-10 flex flex-col sm:gap-10 gap-5">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <section id="media-portofolio" class="py-5 px-5 md:px-10 flex flex-col sm:gap-10 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/belanjapuas/summary.jpg')] group cursor-pointer h-64">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
@@ -219,270 +234,270 @@
                 </div>
             </div>
         </section>
-        <section id="about" class="py-10 px-5 md:px-10 xl:px-48 flex flex-col sm:gap-10 gap-5">
-            <div class="bg-purple-400 w-14 h-3 rounded-xl"></div>
-            <div class="grid grid-cols-3 items-end justify-items-center">
+        <section id="about" class="bg-white xl:px-64 lg:px-32 md:px-20 px-5 md:pt-10 pt-5 md:pb-10 pb-5 flex flex-col gap-3">
+            <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
+            <div class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-5 items-end justify-items-center">
                 <div class="flex flex-col place-self-start gap-1">
-                    <div class="font-bold text-3xl">About me</div>
-                    <div class="uppercase text-gray-500 font-medium tracking-wide text-sm">Professional Path</div>
+                    <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base">About me</div>
+                    <div class="uppercase text-gray-500 font-medium tracking-wide lg:text-sm text-xs">Professional Path</div>
                 </div>
-                <div class="flex flex-col col-span-2 gap-10">
-                    <div class="text-wrap text-gray-400 text-base tracking-wide">
+                <div class="flex flex-col md:col-span-2 xl:gap-10 gap-5">
+                    <div class="text-wrap text-gray-400 tracking-wide md:text-base text-sm">
                         <p>I am software engineer since 2017, used to handle any business model, and any case in software development, also used to handle Backend, Frontend and Mobile apps development.</p>
                         <p>A positive person and problem solver in software development.</p>
                     </div>
                     <div class="grid grid-cols-2 gap-x-10 gap-y-5">
                         <div class="flex flex-col">
                             <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">Javascript</span>
-                                <span class="text-sm font-medium text-gray-400">85%</span>
+                                <span class="md:text-base text-sm font-medium text-gray-400">Javascript</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">PHP</span>
-                                <span class="text-sm font-medium text-gray-400">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="flex flex-col">
                             <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">Python</span>
-                                <span class="text-sm font-medium text-gray-400">30%</span>
+                                <span class="md:text-base text-sm font-medium text-gray-400">PHP</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 30%"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">Ruby on Rails</span>
-                                <span class="text-sm font-medium text-gray-400">25%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 25%"></div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="flex flex-col">
                             <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">MySQL</span>
-                                <span class="text-sm font-medium text-gray-400">80%</span>
+                                <span class="md:text-base text-sm font-medium text-gray-400">Python</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">30%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">PostgreSQL</span>
-                                <span class="text-sm font-medium text-gray-400">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 80%"></div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 30%"></div>
                             </div>
                         </div>
                         <div class="flex flex-col">
                             <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">MongoDB</span>
-                                <span class="text-sm font-medium text-gray-400">75%</span>
+                                <span class="md:text-base text-sm font-medium text-gray-400">Ruby on Rails</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">25%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 75%"></div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 25%"></div>
                             </div>
                         </div>
                         <div class="flex flex-col">
                             <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-gray-400">Docker</span>
-                                <span class="text-sm font-medium text-gray-400">80%</span>
+                                <span class="md:text-base text-sm font-medium text-gray-400">MySQL</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">80%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-purple-400 h-3 rounded-full" style="width: 80%"></div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex justify-between mb-1">
+                                <span class="md:text-base text-sm font-medium text-gray-400">PostgreSQL</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex justify-between mb-1">
+                                <span class="md:text-base text-sm font-medium text-gray-400">MongoDB</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex justify-between mb-1">
+                                <span class="md:text-base text-sm font-medium text-gray-400">Docker</span>
+                                <span class="md:text-sm text-xs font-medium text-gray-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
+                                <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 80%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="job" class="py-10 px-5 md:px-10 xl:px-48 flex flex-col sm:gap-10 gap-5 bg-purple-900">
-            <div class="bg-purple-400 w-14 h-3 rounded-xl"></div>
-            <div class="grid grid-cols-3">
+        <section id="job" class="py-10 xl:px-64 lg:px-32 md:px-20 px-5 md:pt-10 pt-5 md:pb-10 pb-5 flex flex-col gap-3 bg-purple-900">
+            <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
+            <div class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-5">
                 <div class="flex flex-col place-self-start gap-1">
-                    <div class="font-bold text-3xl text-white">Work Experience</div>
-                    <div class="uppercase text-white font-medium tracking-wide text-sm">Previous Jobs</div>
+                    <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base text-white">Work Experience</div>
+                    <div class="uppercase text-white font-medium tracking-wide lg:text-sm text-xs">Previous Job</div>
                 </div>
-                <div class="col-span-2 flex flex-col gap-20">
-                    <div class="flex gap-10">
+                <div class="md:col-span-2 flex flex-col md:gap-20 gap-12">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Berkah Venture</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Berkah Venture</div>
                                 </div>
-                                <div class="text-base font-medium text-white">Jun 2023 - August 2024</div>
+                                <div class="md:text-base text-sm font-medium text-white">Jun 2023 - August 2024</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Optimized load time speed for web application, handle big data almost 100.000 - 150.000 data per page, Do code optimization to get robbust code and readable, adjust UX by myself to give better experience to user. Refactor and/or rewrite database schema.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">React JS</li>
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">Bootstrap 5</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">Docker</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Bitbucket</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">React JS</li>
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">Bootstrap 5</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">Docker</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Bitbucket</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Alteacare</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Alteacare</div>
                                 </div>
-                                <div class="text-base font-medium text-white">March 2021 - January 2023</div>
+                                <div class="md:text-base text-sm font-medium text-white">March 2021 - January 2023</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Developed video conference, ecommerce, and chat engine, handle various business model such as covid vaccine system, dashboard analytic, etc. Handle APIs that hit by users almost 1.200 user per second, create doctor and patient dashboard from scratch, collaborate with another team such as project manager, UI/UX designer and devOps, creating unit test, and participate to give an inovation and convert into solution.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Node JS</li>
-                                        <li class="text-base font-medium text-white">Express JS</li>
-                                        <li class="text-base font-medium text-white">Microservices</li>
-                                        <li class="text-base font-medium text-white">React JS</li>
-                                        <li class="text-base font-medium text-white">Next JS</li>
-                                        <li class="text-base font-medium text-white">Tailwind CSS</li>
-                                        <li class="text-base font-medium text-white">Docker</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">MongoDB</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Node JS</li>
+                                        <li class="font-medium text-white">Express JS</li>
+                                        <li class="font-medium text-white">Microservices</li>
+                                        <li class="font-medium text-white">React JS</li>
+                                        <li class="font-medium text-white">Next JS</li>
+                                        <li class="font-medium text-white">Tailwind CSS</li>
+                                        <li class="font-medium text-white">Docker</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">MongoDB</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Stackbuttler</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Stackbuttler</div>
                                 </div>
-                                <div class="text-base font-medium text-white">April 2020 - May 2021</div>
+                                <div class="md:text-base text-sm font-medium text-white">April 2020 - May 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Work as freelance fullstack engineer, Creating application from scratch, collaborate with UI/UX designer and with direct CTO to ensure feature delivered as well, working with AGILE software development schema.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">Vue JS</li>
-                                        <li class="text-base font-medium text-white">Bootstrap</li>
-                                        <li class="text-base font-medium text-white">MariaDB</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">Vue JS</li>
+                                        <li class="font-medium text-white">Bootstrap</li>
+                                        <li class="font-medium text-white">MariaDB</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Lapaktrip</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Lapaktrip</div>
                                 </div>
-                                <div class="text-base font-medium text-white">April 2020 - May 2021</div>
+                                <div class="md:text-base text-sm font-medium text-white">April 2020 - May 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Maintained an existing web application using laravel and microservice, optimized APIs performance speed to get better experience in website, collaborate with various vendor such as nicepay, PLN, and other to support application needs. Also handle application with user up to 50.000 users.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">Microservices</li>
-                                        <li class="text-base font-medium text-white">MariaDB</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">Microservices</li>
+                                        <li class="font-medium text-white">MariaDB</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-80 w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Codelabs Indonesia</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Codelabs Indonesia</div>
                                 </div>
-                                <div class="text-base font-medium text-white">March 2017 - Nov 2019</div>
+                                <div class="md:text-base text-sm font-medium text-white">March 2017 - Nov 2019</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Create and/or maintained a software from various business models, also handle software with user around 1000 - 10.000 users, solved any bug or issues in existing application, learn and implement microservices.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Codeigneter</li>
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">JQuery</li>
-                                        <li class="text-base font-medium text-white">Bootsrap 4</li>
-                                        <li class="text-base font-medium text-white">Microservices</li>
-                                        <li class="text-base font-medium text-white">MariaDB</li>
-                                        <li class="text-base font-medium text-white">MongoDB</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Gitlab</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Codeigneter</li>
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">JQuery</li>
+                                        <li class="font-medium text-white">Bootsrap 4</li>
+                                        <li class="font-medium text-white">Microservices</li>
+                                        <li class="font-medium text-white">MariaDB</li>
+                                        <li class="font-medium text-white">MongoDB</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Gitlab</li>
                                     </ul>
                                 </div>
                             </div>
@@ -491,567 +506,567 @@
                 </div>
             </div>
         </section>
-        <section id="summary-project" class="flex flex-col sm:gap-10 gap-5 bg-white relative">
-            <img src="./assets/images/smoke.png" class="w-full h-48 object-cover contrast-50">
-            <div class="absolute">
-                <div class="grid grid-cols-4 text-white px-5 md:px-10 xl:px-40 py-10">
+        <section id="summary-project" class="flex flex-col relative">
+            <img src="./assets/images/smoke.png" class="w-full lg:h-48 md:h-28 h-full object-cover contrast-50">
+            <div class="absolute xl:left-12 lg:left-40 lg:left-5 left-8 xl:top-5 lg:top-10 md:top-0 top-12">
+                <div class="grid md:grid-cols-4 grid-cols-2 text-white px-5 justify-center py-10 gap-10">
                     <div class="flex gap-4 items-center">
-                        <span class="text-8xl font-bold">24</span>
-                        <span class="font-bold text-3xl">Techologies Used</span>
+                        <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">24</span>
+                        <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Techologies <br> Used</span>
                     </div>
                     <div class="flex gap-4 items-center">
-                        <span class="text-8xl font-bold">17</span>
-                        <span class="font-bold text-3xl">Projects Completed</span>
+                        <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">17</span>
+                        <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Projects <br> Completed</span>
                     </div>
                     <div class="flex gap-4 items-center">
-                        <span class="text-8xl font-bold">7</span>
-                        <span class="font-bold text-3xl">Years <br> Experience</span>
+                        <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">7</span>
+                        <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Years <br> Experience</span>
                     </div>
                     <div class="flex gap-4 items-center">
-                        <span class="text-8xl font-bold">35</span>
-                        <span class="font-bold text-3xl">Happy <br> Clients</span>
+                        <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">35</span>
+                        <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Happy <br> Clients</span>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="project" class="py-10 px-5 md:px-10 xl:px-48 flex flex-col sm:gap-10 gap-5 bg-purple-900">
-            <div class="bg-purple-400 w-14 h-3 rounded-xl"></div>
-            <div class="grid grid-cols-3">
+        <section id="project" class="py-10 xl:px-64 lg:px-32 md:px-20 px-5 md:pt-10 pt-5 md:pb-10 pb-5 flex flex-col gap-3 bg-purple-900">
+            <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
+            <div class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-5">
                 <div class="flex flex-col place-self-start gap-1">
-                    <div class="font-bold text-3xl text-white">Project Experience</div>
-                    <div class="uppercase text-white font-medium tracking-wide text-sm">Previous Jobs</div>
+                    <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base text-white">Project Experience</div>
+                    <div class="uppercase text-white font-medium tracking-wide lg:text-sm text-xs">Previous Project</div>
                 </div>
-                <div class="col-span-2 flex flex-col gap-12 pb-10">
-                    <div class="flex gap-10">
+                <div class="md:col-span-2 flex flex-col md:gap-20 gap-12">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Bumi Daya Plaza</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Bumi Daya Plaza</div>
                                 </div>
                                 <div class="text-base font-medium text-white">September 2024 - Present</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 This application is expertly built with Laravel and PostgreSQL, ensuring robust backend performance and data management. Real-time data processing is achieved through the integration of Redis, enhancing speed and responsiveness. Additionally, the server is configured and optimized for seamless performance, ensuring a reliable and scalable environment for deployment.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">React JS</li>
-                                        <li class="text-base font-medium text-white">Tailwind</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">React JS</li>
+                                        <li class="font-medium text-white">Tailwind</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Dermagistry</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Dermagistry</div>
                                 </div>
                                 <div class="text-base font-medium text-white">August 2024 - September 2024</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Developing a Q&A application tailored for hospital needs in Banda Aceh. The questions can be customized, similar to Google Forms, using Vanilla JS for the frontend and Laravel for the API.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">Vanila JS</li>
-                                        <li class="text-base font-medium text-white">Bootsrap 5</li>
-                                        <li class="text-base font-medium text-white">Tailwind</li>
-                                        <li class="text-base font-medium text-white">MariaDB</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">Vanila JS</li>
+                                        <li class="font-medium text-white">Bootsrap 5</li>
+                                        <li class="font-medium text-white">Tailwind</li>
+                                        <li class="font-medium text-white">MariaDB</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Surfergirl</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Surfergirl</div>
                                 </div>
                                 <div class="text-base font-medium text-white">January 2024 - July 2024</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Developed cashier, inventory, and accounting application with Vue JS for web application and laravel for API application, I also use docker for seamless ecosystem in local or in server. Setup server and using PostgreSQL as database engine as well. create a formula to calculate accounting and so on.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">Nuxt JS</li>
-                                        <li class="text-base font-medium text-white">Tailwind</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">Docker</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">Nuxt JS</li>
+                                        <li class="font-medium text-white">Tailwind</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">Docker</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Frontend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Omsetku</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Frontend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Omsetku</div>
                                 </div>
                                 <div class="text-base font-medium text-white">August 2023 - December 2023</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 Creating a sales automation app with features for automated reporting, inventory management, and attendance tracking. Built from scratch using React Native and native CSS.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
                                     <ul class="grid grid-cols-1 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">React Native</li>
-                                        <li class="text-base font-medium text-white">CSS Native</li>
+                                        <li class="font-medium text-white">React Native</li>
+                                        <li class="font-medium text-white">CSS Native</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Telkom DBM</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Telkom DBM</div>
                                 </div>
                                 <div class="text-base font-medium text-white">October 2022 - September 2023</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 This robust solution is developed using Laravel and PostgreSQL, offering high performance and seamless scalability. Integrated with essential Google services, it enhances functionality and provides efficient real-time communication through Redis. Containerized using Docker, the setup ensures consistent environments across development and production. Server configuration is carefully handled, ensuring optimal performance. Comprehensive API documentation is meticulously created using Postman, simplifying development and collaboration across teams.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">Google Service</li>
-                                        <li class="text-base font-medium text-white">Docker</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">Google Service</li>
+                                        <li class="font-medium text-white">Docker</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Sepaket</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Sepaket</div>
                                 </div>
                                 <div class="text-base font-medium text-white">May 2022 - August 2022</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I specialize in developing robust applications using Node.js and Express for backend operations, ensuring efficient data handling with PostgreSQL databases and deploying applications in Docker containers for scalability and portability. I optimize performance with Redis cache for rapid data retrieval. I have integrated multiple courier services including JNE, Sicepat, Ninja, and IDexpress for seamless logistics operations. Additionally, I have integrated payment services with Xendit, ensured secure user authentication using Google OAuth, and implemented error monitoring with Sentry. I also integrated messaging services with Telegram for real-time notifications. These integrations collectively support a third-party logistics application, enhancing operational efficiency and customer satisfaction.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Node JS</li>
-                                        <li class="text-base font-medium text-white">Express JS</li>
-                                        <li class="text-base font-medium text-white">Google Service</li>
-                                        <li class="text-base font-medium text-white">Docker</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Node JS</li>
+                                        <li class="font-medium text-white">Express JS</li>
+                                        <li class="font-medium text-white">Google Service</li>
+                                        <li class="font-medium text-white">Docker</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Penakita</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Penakita</div>
                                 </div>
                                 <div class="text-base font-medium text-white">September 2021 - Nov 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I specialize in developing scalable applications using Node.js and Express for backend operations, leveraging Docker containers for efficient deployment and management. I have extensive experience in building microservices architecture to ensure modularity and scalability of systems. My proficiency extends to working with PostgreSQL for robust relational database management and Redis cache for optimizing data retrieval and storage. I have created APIs for various purposes, including primary websites, writer platforms, administrative tools, and content writer recruitment systems. These APIs facilitate seamless communication and integration across different functionalities, enhancing overall system performance and usability.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Node JS</li>
-                                        <li class="text-base font-medium text-white">Express JS</li>
-                                        <li class="text-base font-medium text-white">Docker</li>
-                                        <li class="text-base font-medium text-white">PostgreSQL</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Node JS</li>
+                                        <li class="font-medium text-white">Express JS</li>
+                                        <li class="font-medium text-white">Docker</li>
+                                        <li class="font-medium text-white">PostgreSQL</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Jati Tinggi Holding Sdn Bhd</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Jati Tinggi Holding Sdn Bhd</div>
                                 </div>
                                 <div class="text-base font-medium text-white">August 2021 - September 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 My expertise includes developing robust web applications using Laravel and managing MySQL databases to ensure efficient data handling. I excel in maintaining existing features while also creating new functionalities such as automated stock management and pricing, as well as budget management for project purposes. I have developed schedulers for invoice notices to streamline financial operations. One of my notable achievements includes developing an application integrated with SAP systems for property vendors, facilitating seamless business processes and data management.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">MySQL</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">MySQL</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Frontend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Gotoko</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Frontend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Gotoko</div>
                                 </div>
                                 <div class="text-base font-medium text-white">April 2021 - August 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I developed using Next.js and Redux Observable for state management. I have created multiple admin dashboards including marketing, product, and sales dashboards. These dashboards provide comprehensive insights and functionalities tailored to specific business needs, enabling effective decision-making and performance monitoring across various operational areas.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Next JS</li>
-                                        <li class="text-base font-medium text-white">Redux Observable</li>
-                                        <li class="text-base font-medium text-white">Bootstrap</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Next JS</li>
+                                        <li class="font-medium text-white">Redux Observable</li>
+                                        <li class="font-medium text-white">Bootstrap</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">BBPT - BBTMC (Government System)</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">BBPT - BBTMC (Government System)</div>
                                 </div>
                                 <div class="text-base font-medium text-white">December 2020 - January 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I specialize in full-stack development, utilizing Laravel for backend development, Vue.js for frontend interfaces, and integrating Redis for efficient caching. I manage MySQL databases to ensure robust data handling. I have integrated Gmail for email sending services and government systems for seamless integration. My expertise includes developing applications for employee management, ensuring efficient and streamlined operations.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">JQuery</li>
-                                        <li class="text-base font-medium text-white">Bootstrap</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">JQuery</li>
+                                        <li class="font-medium text-white">Bootstrap</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Wordpress Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Serualand</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Wordpress Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Serualand</div>
                                 </div>
                                 <div class="text-base font-medium text-white">October 2020 - November 2021</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I develop web applications using WordPress and manage MySQL databases. I ensure that applications are SEO-optimized. My work includes creating and maintaining a property marketplace application
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Wordpress</li>
-                                        <li class="text-base font-medium text-white">MySQL</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Wordpress</li>
+                                        <li class="font-medium text-white">MySQL</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">All About Jazz</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">All About Jazz</div>
                                 </div>
                                 <div class="text-base font-medium text-white">August 2020 - October 2020</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I transitioned our framework from native PHP to Laravel and continued developing web applications with Laravel. I manage MySQL databases and ensure that applications are SEO-optimized. My work includes creating and maintaining applications for news and event information related to jazz music.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">MariaDB</li>
-                                        <li class="text-base font-medium text-white">CSS Native</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">MariaDB</li>
+                                        <li class="font-medium text-white">CSS Native</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Lykos</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Lykos</div>
                                 </div>
                                 <div class="text-base font-medium text-white">March 2020 - July 2020</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I develop web applications using Laravel and manage MariaDB databases, along with Redis cache for efficient data handling. I integrate automated assessment tools from Cangrade, as well as Google Maps and Firebase services. My work includes developing applications for applicant and talent management.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Laravel</li>
-                                        <li class="text-base font-medium text-white">MariaDB</li>
-                                        <li class="text-base font-medium text-white">Microservices</li>
-                                        <li class="text-base font-medium text-white">Redis</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Laravel</li>
+                                        <li class="font-medium text-white">MariaDB</li>
+                                        <li class="font-medium text-white">Microservices</li>
+                                        <li class="font-medium text-white">Redis</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Fullstack Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Inkindo (Government System)</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Inkindo (Government System)</div>
                                 </div>
                                 <div class="text-base font-medium text-white">March 2019 - April 2019</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I develop web applications using CodeIgniter 3 and manage MySQL databases. I maintain existing features and create new ones, such as registration and document validation. My work includes developing applications for "SIUP / Surat Izin Usaha Perdagangan" (Trade Business License).
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Codeigneter</li>
-                                        <li class="text-base font-medium text-white">MySQL</li>
-                                        <li class="text-base font-medium text-white">Github</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Codeigneter</li>
+                                        <li class="font-medium text-white">MySQL</li>
+                                        <li class="font-medium text-white">Github</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Wordpress Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Gerhamedia</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Wordpress Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Gerhamedia</div>
                                 </div>
                                 <div class="text-base font-medium text-white">May 2019 - July 2019</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I manage content and develop web applications using WordPress. I handle MySQL database development and ensure that applications are SEO-optimized. My work includes creating and maintaining a marketplace for convection products.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Wordpress</li>
-                                        <li class="text-base font-medium text-white">MySQL</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Wordpress</li>
+                                        <li class="font-medium text-white">MySQL</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Anekapromosi</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Anekapromosi</div>
                                 </div>
                                 <div class="text-base font-medium text-white">July 2019 - September 2019</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I develop web applications using CodeIgniter 3 and manage MySQL databases. I handle server setup and maintenance to ensure optimal performance. Additionally, I create SEO-optimized applications for the convection marketplace.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Codeigneter</li>
-                                        <li class="text-base font-medium text-white">MySQL</li>
-                                        <li class="text-base font-medium text-white">Gitlab</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Codeigneter</li>
+                                        <li class="font-medium text-white">MySQL</li>
+                                        <li class="font-medium text-white">Gitlab</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-10 pb-5">
+                    <div class="flex md:gap-10 gap-8 md:px-0 px-2">
                         <div class="relative">
-                            <div class="h-full w-px bg-white mt-14"></div>
-                            <div class="w-10 h-10 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 -left-5">
-                                <div class="w-5 h-5 rounded-full bg-violet-500"></div>
+                            <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
+                            <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
+                                <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-5">
                             <div class="flex flex-col gap-2">
                                 <div>
-                                    <div class="font-bold text-2xl text-white">Backend Engineer</div>
-                                    <div class="text-purple-300 font-extrabold text-xl">Belanjapuas.com</div>
+                                    <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
+                                    <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Belanjapuas.com</div>
                                 </div>
                                 <div class="text-base font-medium text-white">April 2018 - July 2018</div>
                             </div>
-                            <div class="text-base text-white">
+                            <div class="md:text-base text-sm text-white">
                                 I manage projects and lead teams to meet our goals efficiently. I handle server setup and maintenance for optimal performance. I develop web applications using CodeIgniter 3 and integrate MySQL databases with services like RajaOngkir for shipping. I also integrate secure payment systems with Midtrans and create API documentation with Postman. Additionally, I develop and maintain marketplace applications for buying and selling goods.
                             </div>
                             <div class="flex flex-col gap-2">
-                                <div class="text-base text-white font-bold">Technology Used :</div>
+                                <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
                                 <div class="pl-4">
-                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0">
-                                        <li class="text-base font-medium text-white">Codeigneter</li>
-                                        <li class="text-base font-medium text-white">MySQL</li>
-                                        <li class="text-base font-medium text-white">Gitlab</li>
+                                    <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
+                                        <li class="font-medium text-white">Codeigneter</li>
+                                        <li class="font-medium text-white">MySQL</li>
+                                        <li class="font-medium text-white">Gitlab</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1060,8 +1075,8 @@
                 </div>
             </div>
         </section>
-        <footer class="py-10 px-5 md:px-10 xl:px-48 flex flex-col sm:gap-10 gap-5 bg-white">
-            <div class="text-center">Created With ❤️ By My Self | Copyright ©2024 All rights reserved</div>
+        <footer class="py-10 px-5 md:px-10 xl:px-48 bg-white">
+            <div class="text-center md:text-base text-xs">Created With ❤️ By My Self | Copyright ©2024 All rights reserved</div>
         </footer>
     </body>
 </html>
