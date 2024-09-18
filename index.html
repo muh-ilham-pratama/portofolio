@@ -101,26 +101,42 @@
                         </div>
                     </div>
                     <div class="flex gap-5">
-                        <div class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500">
+                        <a
+                            class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
+                            href="https://www.instagram.com/seagleax/"
+                            target="_blank"
+                        >
                             <span class="material-symbols-outlined text-base">
                                 <i class="fa-brands fa-instagram"></i>
                             </span>
-                        </div>
-                        <div class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500">
+                        </a>
+                        <a
+                            class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
+                            href="https://codeprimes.github.io/profile"
+                            target="_blank"
+                        >
                             <span class="material-symbols-outlined text-base">
-                                <i class="fa-brands fa-square-facebook"></i>
+                                <i class="fa-solid fa-earth-americas"></i>
                             </span>
-                        </div>
-                        <div class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500">
+                        </a>
+                        <a
+                            class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
+                            href="https://www.linkedin.com/in/muhammad-ilham-pratama/"
+                            target="_blank"
+                        >
                             <span class="material-symbols-outlined text-base">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </span>
-                        </div>
-                        <div class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500">
+                        </a>
+                        <a
+                            class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
+                            href="https://github.com/litle-project"
+                            target="_blank"
+                        >
                             <span class="material-symbols-outlined text-base">
                                 <i class="fa-brands fa-github"></i>
                             </span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -133,100 +149,100 @@
                     <div class="uppercase text-gray-500 font-medium tracking-wide lg:text-sm text-xs">My Work</div>
                 </div>
                 <ul class="flex md:gap-5 gap-2 uppercase font-bold text-purple-400 md:col-span-2 whitespace-nowrap xl:text-base sm:text-sm text-xs">
-                    <li class="cursor-pointer hover:text-violet-600 border-b-4 border-purple-400 pb-2 w-fit">All</li>
-                    <li class="cursor-pointer hover:text-violet-600 w-fit">Mobile Apps</li>
-                    <li class="cursor-pointer hover:text-violet-600 w-fit">Website</li>
-                    <li class="cursor-pointer hover:text-violet-600 w-fit">Dashboard</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit menu border-b-4 border-purple-400 pb-2" onclick="filter('all')" id="menu-all">All</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit menu" onclick="filter('mobile')" id="menu-mobile">Mobile Apps</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit menu" onclick="filter('website')" id="menu-website">Website</li>
+                    <li class="cursor-pointer hover:text-violet-600 w-fit menu" onclick="filter('dashboard')" id="menu-dashboard">Dashboard</li>
                 </ul>
             </div>
         </section>
         <section id="media-portofolio" class="py-5 px-5 md:px-10 flex flex-col sm:gap-10 gap-5">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/belanjapuas/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/belanjapuas/summary.jpg')] group cursor-pointer h-64 media media-website">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Belanjapuas
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/aneka-promosi/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/aneka-promosi/summary.jpg')] group cursor-pointer h-64 media media-website">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Aneka Promosi
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/fnbnation/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/fnbnation/summary.jpg')] group cursor-pointer h-64 media media-website">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         FnB Nation
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/allaboutjazz/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/allaboutjazz/summary.jpg')] group cursor-pointer h-64 media media-website">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         All About Jazz
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/stackbutler/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/stackbutler/summary.jpg')] group cursor-pointer h-64 media media-website">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Stackbuttler
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/bbtmc/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/bbtmc/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         BBTMC - BPPT
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/penakita/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/penakita/summary.jpg')] group cursor-pointer h-64 media media-website">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Penakita
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/sepaket/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/sepaket/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Sepaket
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/jtkms/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/jtkms/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Jati Tinggi Holding
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/binus/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/binus/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Binus University
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/dbm/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/dbm/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Telkom DBM
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/omsetku/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/omsetku/summary.jpg')] group cursor-pointer h-64 media media-mobile">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Omsetku
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/surfer/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/surfer/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Surfer Girl
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/udang/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/udang/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Panen
                     </div>
                 </div>
-                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/dermagistry/summary.jpg')] group cursor-pointer h-64">
+                <div class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/dermagistry/summary.jpg')] group cursor-pointer h-64 media media-dashboard">
                     <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
                     <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
                         Dermagistry
