@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JS Carousel</title>
+  <script defer src="carousel.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+
+  <div class="relative w-96">
+    <!-- Carousel Container -->
+    <div id="carousel" class="overflow-hidden relative w-full h-64 bg-gray-300">
+      <!-- Image Slides -->
+      <div class="carousel-images flex transition-transform duration-500">
+        <img src="https://via.placeholder.com/400x250/FF0000/FFFFFF?text=1" alt="1" class="w-full h-full object-cover">
+        <img src="https://via.placeholder.com/400x250/00FF00/FFFFFF?text=2" alt="2" class="w-full h-full object-cover">
+        <img src="https://via.placeholder.com/400x250/0000FF/FFFFFF?text=3" alt="3" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- Left Button -->
+    <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+      &#10094;
+    </button>
+    
+    <!-- Right Button -->
+    <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+      &#10095;
+    </button>
+  </div>
+</body>
+<script>
+    const carousel = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    let currentIndex = 0;
+    const totalImages = images.length;
+
+    document.getElementById('prev').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalImages - 1; // Go to last image if at the start
+    }
+    updateCarousel();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+    if (currentIndex < totalImages - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Go back to the first image if at the end
+    }
+    updateCarousel();
+    });
+
+    function updateCarousel() {
+    const offset = -currentIndex * 100; // Move by 100% per image
+    carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+</script>
+</html>
