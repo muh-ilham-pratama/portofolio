@@ -1,1222 +1,1384 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Portofolio</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Let's Built Miracle With Me">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <meta http-equiv="refresh" content="5; ,URL=https://litle-project.github.io/codecraft"> -->
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ilham Pratama | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        primaryDark: '#1d4ed8',
+                        secondary: '#0891b2',
+                        accent: '#10b981'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: #2563eb;
+            box-shadow: 0 0 0 3px #2563eb;
+        }
+        .industry-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .project-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .pagination-btn {
+            transition: all 0.2s ease;
+        }
+        .pagination-btn:hover:not(.active):not(:disabled) {
+            background-color: #e5e7eb;
+        }
+        .pagination-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700 font-sans">
 
-        <!-- Google / Search Engine Tags -->
-        <meta itemprop="name" content="Muhammad Ilham Pratama Portofolio">
-        <meta itemprop="description" content="Let's Built Miracle With Me">
-        <meta itemprop="image" content="https://muh-ilham-pratama.github.io/portofolio/assets/images/logo.png">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-xl font-bold text-primary">Ilham Pratama</a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-gray-600 hover:text-primary transition-colors text-sm font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary transition-colors text-sm font-medium">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary transition-colors text-sm font-medium">Experience</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary transition-colors text-sm font-medium">Projects</a>
+                    <a href="#skills" class="text-gray-600 hover:text-primary transition-colors text-sm font-medium">Skills</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-primary hover:bg-primaryDark text-white text-sm font-medium rounded-lg transition-colors">Contact Me</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-600">
+                    <span class="iconify text-2xl" data-icon="solar:hamburger-menu-linear"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="block text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="#experience" class="block text-gray-600 hover:text-primary transition-colors">Experience</a>
+                <a href="#projects" class="block text-gray-600 hover:text-primary transition-colors">Projects</a>
+                <a href="#skills" class="block text-gray-600 hover:text-primary transition-colors">Skills</a>
+                <a href="#contact" class="block text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-        <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="https://muh-ilham-pratama.github.io/portofolio">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Muhammad Ilham Pratama Portofolio">
-        <meta property="og:description" content="Muhammad Ilham Pratama Portofolio">
-        <meta property="og:image" content="https://muh-ilham-pratama.github.io/portofolio/assets/images/logo.png">
-
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Portofolio">
-        <meta name="twitter:description" content="Personal Portofolio">
-        <meta name="twitter:image" content="https://muh-ilham-pratama.github.io/portofolio/assets/images/logo.png">
-
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./assets//js/index.js"></script>
-        <!-- <link rel="icon" type="image/x-icon" href="assets/images/logo.ico"> -->
-        <link rel="canonical" href="https://muhammad-ilham-pratama.github.io/portofolio" />
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
-    </head>
-    <body>
-        <main class="content max-h-lvh overflow-y-scroll">
-            <section id="summary" class="bg-center bg-no-repeat bg-cover" style="background-image: url('assets/images/background.jpg');">
-                <div class="xl:px-64 lg:px-20 px-5 pt-5 flex flex-col gap-8">
-                    <div class="bg-purple-400 grid md:grid-cols-3 grid-cols-1 justify-center text-white font-light">
-                        <div class="flex lg:p-6 p-4 items-center gap-4">
-                            <span class="material-symbols-outlined sm:text-4xl text-2xl">location_on</span>
-                            <div class="flex flex-col">
-                                <div class="text-xs lg:text-base tracking-wide">Gg. Hj Soleh 1, Sawah Baru, Ciputat</div>
-                                <div class="text-xs lg:text-base tracking-wide">Tangerang Selatan, Banten, Indonesia</div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-cyan-50 pt-20">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-shrink-0 reveal">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
+                            <div class="w-full h-full rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                                <img src="assets/photo.jpeg" />
                             </div>
                         </div>
-                        <div class="flex lg:p-6 p-4 items-center gap-4">
-                            <span class="material-symbols-outlined sm:text-4xl text-2xl">call</span>
-                            <div class="flex flex-col">
-                                <div class="text-xs lg:text-base tracking-wide">(+62) 838-7102-8000</div>
-                                <div class="text-xs lg:text-base tracking-wide">Mon - Fri, 09.00 - 21.00</div>
-                            </div>
-                        </div>
-                        <div class="flex lg:p-6 p-4 items-center gap-4">
-                            <span class="material-symbols-outlined sm:text-4xl text-2xl">forum</span>
-                            <div class="flex flex-col">
-                                <div class="text-xs lg:text-base tracking-wide">ilham.formal@gmail.com</div>
-                                <div class="text-xs lg:text-base tracking-wide">Reply In 24 Hours</div>
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-full shadow-lg border border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></span>
+                                <span class="text-sm font-medium text-gray-700">Open to Work</span>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-4 md:justify-end justify-between">
-                        <a
-                            class="px-8 py-2.5 lg:text-base text-xs text-white bg-purple-400 hover:bg-purple-500 outline-none"
-                            href="./assets/files/Resume Ilham.pdf"
-                            target="_blank"
-                            download
-                            onclick="download()"
-                        >
-                            Download CV
+                </div>
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="reveal">
+                        <p class="text-primary font-semibold mb-2">Hello, I'm</p>
+                        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Muhammad Ilham Pratama</h1>
+                        <h2 class="text-xl md:text-2xl text-gray-600 mb-6">Software Engineer</h2>
+                        <p class="text-gray-500 max-w-xl mb-6 leading-relaxed">
+                            Software engineer since 2018 with <span class="experience"></span>+ years of experience handling diverse business models 
+                            and complex cases. Proficient in Backend, Frontend, and Mobile app development, with a 
+                            strong focus on problem-solving and delivering impactful solutions.
+                        </p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+                            <span class="industry-badge bg-red-100 text-red-700">
+                                <span class="iconify" data-icon="solar:heart-pulse-bold"></span>
+                                Healthcare (2 yrs)
+                            </span>
+                            <span class="industry-badge bg-green-100 text-green-700">
+                                <span class="iconify" data-icon="solar:airplane-bold"></span>
+                                Travel (1 yr)
+                            </span>
+                            <span class="industry-badge bg-blue-100 text-blue-700">
+                                <span class="iconify" data-icon="solar:airplane-bold"></span>
+                                Aquaculture (1 yr)
+                            </span>
+                            <span class="industry-badge bg-purple-100 text-purple-700">
+                                <span class="iconify" data-icon="solar:code-square-bold"></span>
+                                SaaS (3 yrs)
+                            </span>
+                            <span class="industry-badge bg-cyan-100 text-cyan-700">
+                                <span class="iconify" data-icon="solar:chart-bold"></span>
+                                Big Data (1 yr)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-8 mb-8 reveal">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary"><span class="experience"></span>+</div>
+                            <div class="text-sm text-gray-500">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">20+</div>
+                            <div class="text-sm text-gray-500">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">5+</div>
+                            <div class="text-sm text-gray-500">Collaboration Company</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal">
+                        <a href="#contact" class="px-8 py-4 bg-primary hover:bg-primaryDark text-white font-semibold rounded-xl transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                            <span class="iconify" data-icon="solar:chat-round-dots-bold"></span>
+                            Get In Touch
                         </a>
-                        <a
-                            class="px-8 py-2.5 lg:text-base text-xs text-white bg-purple-400 hover:bg-purple-500 outline-none"
-                            target="_blank"
-                            href="https://wa.me/6283871028000"
-                        >
-                            Start Chat
+                        <a href="#projects" class="px-8 py-4 border-2 border-gray-200 hover:border-primary text-gray-700 hover:text-primary font-semibold rounded-xl transition-all flex items-center justify-center gap-2">
+                            <span class="iconify" data-icon="solar:folder-with-files-bold"></span>
+                            View Projects
                         </a>
                     </div>
-                    <div class="bg-white relative flex flex-col gap-6 items-center lg:pt-36 md:pt-24 pt-20 xl:mt-20 lg:mt-16 md:mt-14 mt-10 pb-5 xl:w-3/4 lg:w-3/4 w-full place-self-center">
-                        <div class="lg:w-48 lg:h-48 md:w-40 md:h-40 w-28 h-28 absolute xl:top-[-100px] md:-top-20 -top-10 xl:-[350px] lg:left-62">
-                            <img src="assets/images/photo.jpeg" class="rounded-full object-cover">
-                        </div>
-                        <div class="flex flex-col gap-2 items-center">
-                            <h2 class="font-bold xl:text-4xl lg:text-3xl md:text-2xl text-base">Muh. Ilham Pratama</h2>
-                            <h3 class="text-purple-400 xl:text-2xl lg:text-xl md:text-base text-sm tracking-wide">Software Engineer</h3>
-                        </div>
-                        <div class="flex flex-col gap-2 items-center">
-                            <div class="flex gap-4 xl:text-base md:text-sm text-xs">
-                                <span class="font-bold uppercase">Born :</span>
-                                <span>June 04, 1995</span>
-                            </div>
-                            <div class="flex gap-4 xl:text-base md:text-sm text-xs">
-                                <span class="font-bold uppercase">Email :</span>
-                                <span>ilham.formal@gmail.com</span>
-                            </div>
-                            <div class="flex gap-4 xl:text-base md:text-sm text-xs">
-                                <span class="font-bold uppercase">Marital Status :</span>
-                                <span>Married</span>
-                            </div>
-                        </div>
-                        <div class="flex gap-5">
-                            <a
-                                class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
-                                href="https://www.instagram.com/seagleax/"
-                                target="_blank"
-                            >
-                                <span class="material-symbols-outlined text-base">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </span>
-                            </a>
-                            <a
-                                class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
-                                href="https://codeprimes.github.io/profile"
-                                target="_blank"
-                            >
-                                <span class="material-symbols-outlined text-base">
-                                    <i class="fa-solid fa-earth-americas"></i>
-                                </span>
-                            </a>
-                            <a
-                                class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
-                                href="https://www.linkedin.com/in/muhammad-ilham-pratama/"
-                                target="_blank"
-                            >
-                                <span class="material-symbols-outlined text-base">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </span>
-                            </a>
-                            <a
-                                class="bg-purple-400 rounded-full px-2.5 pb-1.5 pt-1 text-white flex items-center cursor-pointer hover:bg-purple-500"
-                                href="https://github.com/litle-project"
-                                target="_blank"
-                            >
-                                <span class="material-symbols-outlined text-base">
-                                    <i class="fa-brands fa-github"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="portofolio" class="bg-white xl:px-64 lg:px-32 md:px-20 px-5 xl:pt-24 md:pt-16 pt-10 md:pb-10 pb-5 flex flex-col gap-3">
-                <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
-                <div class="md:grid md:grid-cols-3 md:gap-0 flex flex-col gap-5 md:items-end justify-items-between">
-                    <div class="flex flex-col place-self-start gap-1">
-                        <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base">Portfolio</div>
-                        <div class="uppercase text-gray-500 font-medium tracking-wide lg:text-sm text-xs">My Work</div>
-                    </div>
-                    <ul class="flex md:gap-5 gap-2 uppercase font-bold text-purple-400 md:col-span-2 whitespace-nowrap xl:text-base sm:text-sm text-xs">
-                        <li class="cursor-pointer hover:text-violet-600 w-fit menu border-b-4 border-purple-400 pb-2" onclick="filter('all')" id="menu-all">All</li>
-                        <li class="cursor-pointer hover:text-violet-600 w-fit menu" onclick="filter('mobile')" id="menu-mobile">Mobile Apps</li>
-                        <li class="cursor-pointer hover:text-violet-600 w-fit menu" onclick="filter('website')" id="menu-website">Website</li>
-                        <li class="cursor-pointer hover:text-violet-600 w-fit menu" onclick="filter('dashboard')" id="menu-dashboard">Dashboard</li>
-                    </ul>
-                </div>
-            </section>
-            <section id="media-portofolio" class="bg-white py-5 px-5 md:px-10 flex flex-col sm:gap-10 gap-5">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/belanjapuas/summary.jpg')] group cursor-pointer h-64 media media-website"
-                        onclick="detail('belanjapuas')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Belanjapuas
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/aneka-promosi/summary.jpg')] group cursor-pointer h-64 media media-website"
-                        onclick="detail('aneka-promosi')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Aneka Promosi
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/fnbnation/summary.jpg')] group cursor-pointer h-64 media media-website"
-                        onclick="detail('fnbnation')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            FnB Nation
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/allaboutjazz/summary.jpg')] group cursor-pointer h-64 media media-website"
-                        onclick="detail('allaboutjazz')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            All About Jazz
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/stackbutler/summary.jpg')] group cursor-pointer h-64 media media-website"
-                        onclick="detail('stackbutler')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Stackbuttler
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/bbtmc/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('bbtmc')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            BBTMC - BPPT
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/gotoko/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('gotoko')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Gotoko (Sales & Marketing)
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/penakita/summary.jpg')] group cursor-pointer h-64 media media-website"
-                        onclick="detail('penakita')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Penakita
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/sepaket/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('sepaket')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Sepaket
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/jtkms/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('jtkms')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Jati Tinggi Holding
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/binus/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('binus')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Binus University
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/dbm/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('dbm')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Telkom DBM
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/omsetku/summary.jpg')] group cursor-pointer h-64 media media-mobile"
-                        onclick="detail('omsetku')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Omsetku
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/surfer/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('surfer')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Surfer Girl
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/panen/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('panen')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Panen
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/dermagistry/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('dermagistry')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Dermagistry
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/hr-analytic/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('hr-analytic')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            HR Analytic
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/bumidaya/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('bumidaya')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Bumidaya
-                        </div>
-                    </div>
-                    <div
-                        class="text-white text-center grid bg-cover rounded-xl bg-[url('assets/project/gek/summary.jpg')] group cursor-pointer h-64 media media-dashboard"
-                        onclick="detail('gek')"
-                    >
-                        <div class="col-start-1 row-start-1 rounded-xl bg-gray-800 bg-opacity-50 group-hover:bg-opacity-0 transition-all duration-300 w-full h-full"></div>
-                        <div class="col-start-1 row-start-1 mx-auto my-auto text-xl font-bold group-hover:hidden">
-                            Gudang Evaluasi Karyawan
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="about" class="bg-white xl:px-64 lg:px-32 md:px-20 px-5 md:pt-10 pt-5 md:pb-10 pb-5 flex flex-col gap-3">
-                <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
-                <div class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-5 items-end justify-items-center">
-                    <div class="flex flex-col place-self-start gap-1">
-                        <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base">About me</div>
-                        <div class="uppercase text-gray-500 font-medium tracking-wide lg:text-sm text-xs">Professional Path</div>
-                    </div>
-                    <div class="flex flex-col md:col-span-2 xl:gap-10 gap-5">
-                        <div class="text-wrap text-gray-400 tracking-wide md:text-base text-sm">
-                            <p>I am software engineer since 2017, used to handle any business model, and any case in software development, also used to handle Backend, Frontend and Mobile apps development.</p>
-                            <p>A positive person and problem solver in software development.</p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-x-10 gap-y-5">
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">Javascript</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">85%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">PHP</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">90%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">Python</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">30%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 30%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">Ruby on Rails</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">25%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 25%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">MySQL</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">80%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">PostgreSQL</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">80%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">MongoDB</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">75%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="flex justify-between mb-1">
-                                    <span class="md:text-base text-sm font-medium text-gray-400">Docker</span>
-                                    <span class="md:text-sm text-xs font-medium text-gray-400">80%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full md:h-3 h-2">
-                                    <div class="bg-purple-400 md:h-3 h-2 rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="job" class="py-10 xl:px-64 lg:px-32 md:px-20 px-5 md:pt-10 pt-5 md:pb-10 pb-5 flex flex-col gap-3 bg-purple-900">
-                <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
-                <div class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-5">
-                    <div class="flex flex-col place-self-start gap-1">
-                        <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base text-white">Work Experience</div>
-                        <div class="uppercase text-white font-medium tracking-wide lg:text-sm text-xs">Previous Job</div>
-                    </div>
-                    <div class="md:col-span-2 flex flex-col md:gap-20 gap-12">
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Berkah Venture</div>
-                                    </div>
-                                    <div class="md:text-base text-sm font-medium text-white">Jun 2023 - August 2024</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Optimized load time speed for web application, handle big data almost 100.000 - 150.000 data per page, Do code optimization to get robbust code and readable, adjust UX by myself to give better experience to user. Refactor and/or rewrite database schema.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">React JS</li>
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">Bootstrap 5</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">Docker</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Bitbucket</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Alteacare</div>
-                                    </div>
-                                    <div class="md:text-base text-sm font-medium text-white">March 2021 - January 2023</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Developed video conference, ecommerce, and chat engine, handle various business model such as covid vaccine system, dashboard analytic, etc. Handle APIs that hit by users almost 1.200 user per second, create doctor and patient dashboard from scratch, collaborate with another team such as project manager, UI/UX designer and devOps, creating unit test, and participate to give an inovation and convert into solution.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Node JS</li>
-                                            <li class="font-medium text-white">Express JS</li>
-                                            <li class="font-medium text-white">Microservices</li>
-                                            <li class="font-medium text-white">React JS</li>
-                                            <li class="font-medium text-white">Next JS</li>
-                                            <li class="font-medium text-white">Tailwind CSS</li>
-                                            <li class="font-medium text-white">Docker</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">MongoDB</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Stackbuttler</div>
-                                    </div>
-                                    <div class="md:text-base text-sm font-medium text-white">April 2020 - May 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Work as freelance fullstack engineer, Creating application from scratch, collaborate with UI/UX designer and with direct CTO to ensure feature delivered as well, working with AGILE software development schema.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">Vue JS</li>
-                                            <li class="font-medium text-white">Bootstrap</li>
-                                            <li class="font-medium text-white">MariaDB</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Lapaktrip</div>
-                                    </div>
-                                    <div class="md:text-base text-sm font-medium text-white">April 2020 - May 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Maintained an existing web application using laravel and microservice, optimized APIs performance speed to get better experience in website, collaborate with various vendor such as nicepay, PLN, and other to support application needs. Also handle application with user up to 50.000 users.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">Microservices</li>
-                                            <li class="font-medium text-white">MariaDB</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Codelabs Indonesia</div>
-                                    </div>
-                                    <div class="md:text-base text-sm font-medium text-white">March 2017 - Nov 2019</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Create and/or maintained a software from various business models, also handle software with user around 1000 - 10.000 users, solved any bug or issues in existing application, learn and implement microservices.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Codeigneter</li>
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">JQuery</li>
-                                            <li class="font-medium text-white">Bootsrap 4</li>
-                                            <li class="font-medium text-white">Microservices</li>
-                                            <li class="font-medium text-white">MariaDB</li>
-                                            <li class="font-medium text-white">MongoDB</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Gitlab</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="summary-project" class="flex flex-col relative">
-                <img src="./assets/images/smoke.png" class="w-full lg:h-48 md:h-28 h-full object-cover contrast-50">
-                <div class="absolute xl:left-12 lg:left-40 lg:left-5 left-8 xl:top-5 lg:top-10 md:top-0 top-12">
-                    <div class="grid md:grid-cols-4 grid-cols-2 text-white px-5 justify-center py-10 gap-10">
-                        <div class="flex gap-4 items-center">
-                            <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">24</span>
-                            <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Techologies <br> Used</span>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">30</span>
-                            <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Projects <br> Completed</span>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">7</span>
-                            <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Years <br> Experience</span>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <span class="xl:text-8xl lg:text-6xl md:text-4xl text-2xl font-bold">38</span>
-                            <span class="font-bold xl:text-3xl lg:text-2xl md:text-base text-sm">Happy <br> Clients</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="project" class="py-10 xl:px-64 lg:px-32 md:px-20 px-5 md:pt-10 pt-5 md:pb-10 pb-5 flex flex-col gap-3 bg-purple-900">
-                <div class="bg-purple-400 w-14 lg:h-3 h-2 rounded-xl"></div>
-                <div class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-5">
-                    <div class="flex flex-col place-self-start gap-1">
-                        <div class="font-bold xl:text-3xl lg:text-2xl md:text-xl text-base text-white">Project Experience</div>
-                        <div class="uppercase text-white font-medium tracking-wide lg:text-sm text-xs">Previous Project</div>
-                    </div>
-                    <div class="md:col-span-2 flex flex-col md:gap-20 gap-12">
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Bumi Daya Plaza</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">September 2024 - Present</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    This application is expertly built with Laravel and PostgreSQL, ensuring robust backend performance and data management. Real-time data processing is achieved through the integration of Redis, enhancing speed and responsiveness. Additionally, the server is configured and optimized for seamless performance, ensuring a reliable and scalable environment for deployment.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">React JS</li>
-                                            <li class="font-medium text-white">Tailwind</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Dermagistry</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">August 2024 - September 2024</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Developing a Q&A application tailored for hospital needs in Banda Aceh. The questions can be customized, similar to Google Forms, using Vanilla JS for the frontend and Laravel for the API.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">Vanila JS</li>
-                                            <li class="font-medium text-white">Bootsrap 5</li>
-                                            <li class="font-medium text-white">Tailwind</li>
-                                            <li class="font-medium text-white">MariaDB</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Surfergirl</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">January 2024 - July 2024</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Developed cashier, inventory, and accounting application with Vue JS for web application and laravel for API application, I also use docker for seamless ecosystem in local or in server. Setup server and using PostgreSQL as database engine as well. create a formula to calculate accounting and so on.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">Nuxt JS</li>
-                                            <li class="font-medium text-white">Tailwind</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">Docker</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Frontend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Omsetku</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">August 2023 - December 2023</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    Creating a sales automation app with features for automated reporting, inventory management, and attendance tracking. Built from scratch using React Native and native CSS.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-1 list-disc gap-y-1.5 gap-x-0">
-                                            <li class="font-medium text-white">React Native</li>
-                                            <li class="font-medium text-white">CSS Native</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Telkom DBM</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">October 2022 - September 2023</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    This robust solution is developed using Laravel and PostgreSQL, offering high performance and seamless scalability. Integrated with essential Google services, it enhances functionality and provides efficient real-time communication through Redis. Containerized using Docker, the setup ensures consistent environments across development and production. Server configuration is carefully handled, ensuring optimal performance. Comprehensive API documentation is meticulously created using Postman, simplifying development and collaboration across teams.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">Google Service</li>
-                                            <li class="font-medium text-white">Docker</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Sepaket</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">May 2022 - August 2022</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I specialize in developing robust applications using Node.js and Express for backend operations, ensuring efficient data handling with PostgreSQL databases and deploying applications in Docker containers for scalability and portability. I optimize performance with Redis cache for rapid data retrieval. I have integrated multiple courier services including JNE, Sicepat, Ninja, and IDexpress for seamless logistics operations. Additionally, I have integrated payment services with Xendit, ensured secure user authentication using Google OAuth, and implemented error monitoring with Sentry. I also integrated messaging services with Telegram for real-time notifications. These integrations collectively support a third-party logistics application, enhancing operational efficiency and customer satisfaction.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Node JS</li>
-                                            <li class="font-medium text-white">Express JS</li>
-                                            <li class="font-medium text-white">Google Service</li>
-                                            <li class="font-medium text-white">Docker</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Penakita</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">September 2021 - Nov 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I specialize in developing scalable applications using Node.js and Express for backend operations, leveraging Docker containers for efficient deployment and management. I have extensive experience in building microservices architecture to ensure modularity and scalability of systems. My proficiency extends to working with PostgreSQL for robust relational database management and Redis cache for optimizing data retrieval and storage. I have created APIs for various purposes, including primary websites, writer platforms, administrative tools, and content writer recruitment systems. These APIs facilitate seamless communication and integration across different functionalities, enhancing overall system performance and usability.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Node JS</li>
-                                            <li class="font-medium text-white">Express JS</li>
-                                            <li class="font-medium text-white">Docker</li>
-                                            <li class="font-medium text-white">PostgreSQL</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Jati Tinggi Holding Sdn Bhd</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">August 2021 - September 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    My expertise includes developing robust web applications using Laravel and managing MySQL databases to ensure efficient data handling. I excel in maintaining existing features while also creating new functionalities such as automated stock management and pricing, as well as budget management for project purposes. I have developed schedulers for invoice notices to streamline financial operations. One of my notable achievements includes developing an application integrated with SAP systems for property vendors, facilitating seamless business processes and data management.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">MySQL</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Frontend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Gotoko</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">April 2021 - August 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I developed using Next.js and Redux Observable for state management. I have created multiple admin dashboards including marketing, product, and sales dashboards. These dashboards provide comprehensive insights and functionalities tailored to specific business needs, enabling effective decision-making and performance monitoring across various operational areas.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Next JS</li>
-                                            <li class="font-medium text-white">Redux Observable</li>
-                                            <li class="font-medium text-white">Bootstrap</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">BBPT - BBTMC (Government System)</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">December 2020 - January 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I specialize in full-stack development, utilizing Laravel for backend development, Vue.js for frontend interfaces, and integrating Redis for efficient caching. I manage MySQL databases to ensure robust data handling. I have integrated Gmail for email sending services and government systems for seamless integration. My expertise includes developing applications for employee management, ensuring efficient and streamlined operations.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">JQuery</li>
-                                            <li class="font-medium text-white">Bootstrap</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Wordpress Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Serualand</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">October 2020 - November 2021</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I develop web applications using WordPress and manage MySQL databases. I ensure that applications are SEO-optimized. My work includes creating and maintaining a property marketplace application
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Wordpress</li>
-                                            <li class="font-medium text-white">MySQL</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">All About Jazz</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">August 2020 - October 2020</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I transitioned our framework from native PHP to Laravel and continued developing web applications with Laravel. I manage MySQL databases and ensure that applications are SEO-optimized. My work includes creating and maintaining applications for news and event information related to jazz music.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">MariaDB</li>
-                                            <li class="font-medium text-white">CSS Native</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Lykos</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">March 2020 - July 2020</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I develop web applications using Laravel and manage MariaDB databases, along with Redis cache for efficient data handling. I integrate automated assessment tools from Cangrade, as well as Google Maps and Firebase services. My work includes developing applications for applicant and talent management.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Laravel</li>
-                                            <li class="font-medium text-white">MariaDB</li>
-                                            <li class="font-medium text-white">Microservices</li>
-                                            <li class="font-medium text-white">Redis</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Fullstack Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Inkindo (Government System)</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">March 2019 - April 2019</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I develop web applications using CodeIgniter 3 and manage MySQL databases. I maintain existing features and create new ones, such as registration and document validation. My work includes developing applications for "SIUP / Surat Izin Usaha Perdagangan" (Trade Business License).
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Codeigneter</li>
-                                            <li class="font-medium text-white">MySQL</li>
-                                            <li class="font-medium text-white">Github</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Wordpress Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Gerhamedia</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">May 2019 - July 2019</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I manage content and develop web applications using WordPress. I handle MySQL database development and ensure that applications are SEO-optimized. My work includes creating and maintaining a marketplace for convection products.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Wordpress</li>
-                                            <li class="font-medium text-white">MySQL</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Anekapromosi</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">July 2019 - September 2019</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I develop web applications using CodeIgniter 3 and manage MySQL databases. I handle server setup and maintenance to ensure optimal performance. Additionally, I create SEO-optimized applications for the convection marketplace.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Codeigneter</li>
-                                            <li class="font-medium text-white">MySQL</li>
-                                            <li class="font-medium text-white">Gitlab</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex md:gap-10 gap-8 md:px-0 px-2">
-                            <div class="relative">
-                                <div class="h-full w-px bg-white md:mt-14 mt-10"></div>
-                                <div class="lg:w-10 lg:h-10 h-7 w-7 rounded-full bg-violet-500/50 flex items-center justify-center absolute -top-0 lg:-left-5 -left-3.5">
-                                    <div class="lg:w-5 lg:h-5 h-3 w-3 rounded-full bg-violet-500"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-5">
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <div class="font-bold xl:text-2xl md:text-xl text-sm text-white">Backend Engineer</div>
-                                        <div class="text-purple-300 font-extrabold xl:text-xl md:text-base text-sm">Belanjapuas.com</div>
-                                    </div>
-                                    <div class="text-base font-medium text-white">April 2018 - July 2018</div>
-                                </div>
-                                <div class="md:text-base text-sm text-white">
-                                    I manage projects and lead teams to meet our goals efficiently. I handle server setup and maintenance for optimal performance. I develop web applications using CodeIgniter 3 and integrate MySQL databases with services like RajaOngkir for shipping. I also integrate secure payment systems with Midtrans and create API documentation with Postman. Additionally, I develop and maintain marketplace applications for buying and selling goods.
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="md:text-base text-sm text-white font-bold">Technology Used :</div>
-                                    <div class="pl-4">
-                                        <ul class="grid grid-cols-2 list-disc gap-y-1.5 gap-x-0 md:text-base text-sm">
-                                            <li class="font-medium text-white">Codeigneter</li>
-                                            <li class="font-medium text-white">MySQL</li>
-                                            <li class="font-medium text-white">Gitlab</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class="py-10 px-5 md:px-10 xl:px-48 bg-white">
-                <div class="text-center md:text-base text-xs">Created With ❤️ By My Self | Copyright ©2024 All rights reserved</div>
-            </footer>
-        </main>
-        <div class="w-1/2 h-lvh overflow-y-scroll bg-white absolute top-0 -right-0 translate-x-full shadow-xl drop-shadow-xl transition-transform duration-500" id="drawer">
-            <input type="hidden" id="name">
-            <input type="hidden" id="image-index" value="0">
-            <div class="flex flex-col p-5 gap-5">
-                <div class="flex gap-10 items-center font-bold border-b pb-2">
-                    <span class="font-bold text-2xl text-violet-500 cursor-pointer" onclick="hide()">
-                        <i class="fa-regular fa-circle-xmark"></i>
-                    </span>
-                    <span id="project-name" class="text-2xl">Dermagistry</span>
-                </div>
-                <div class="bg-gray-700 p-4 flex flex-col gap-5">
-                    <div class="flex gap-5">
-                        <button class="text-white text-2xl">
-                            <i class="fa-solid fa-circle-chevron-left" onclick="swipper('left')"></i>
-                        </button>
-                        <div class="w-full max-h-80 overflow-y-scroll" id="container-swipper">
-                            <div id="swipper" class="flex transition-transform duration-500"></div>
-                        </div>
-                        <button class="text-white text-2xl" onclick="swipper('right')">
-                            <i class="fa-solid fa-circle-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-1" id="about">
-                    <span class="text-base font-bold text-gray-700">About This Application</span>
-                    <span class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro beatae quam odio consequatur nulla maiores dignissimos voluptas, deleniti error harum cupiditate minima iste accusantium illo dolor delectus placeat modi impedit?</span>
-                </div>
-                <div class="flex flex-col gap-1" id="contribution">
-                    <span class="text-base font-bold text-gray-700">My Contribution</span>
-                    <span class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro beatae quam odio consequatur nulla maiores dignissimos voluptas, deleniti error harum cupiditate minima iste accusantium illo dolor delectus placeat modi impedit?</span>
-                </div>
-                <div class="flex flex-col gap-1" id="timeline">
-                    <span class="text-base font-bold text-gray-700">Timeline</span>
-                    <span class="text-sm text-gray-500">01 April 2023 - 07 December 2024</span>
-                </div>
-                <div class="flex flex-col gap-1" id="info">
-                    <span class="text-base font-bold text-gray-700">Deploy at</span>
-                    <span class="text-sm text-gray-500">www.google.com</span>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">About Me</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Detail </h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">A Results-Driven Software Engineer</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I have been a software engineer since 2018, experienced in handling diverse business models 
+                        and complex cases in software development. My expertise spans across Backend, Frontend, and 
+                        Mobile app development, with a strong focus on problem-solving and delivering impactful solutions.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        My journey spans multiple industries including <strong>healthcare/telemedicine</strong> where I built 
+                        robust telemedicine platforms, <strong>tour & travel</strong> optimizing travel solutions, 
+                        <strong>software house (SaaS)</strong> delivering scalable client solutions, and <strong>aquaculture/fisheries</strong> 
+                        leveraging transferable skills in big data, analytics, and system optimization.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <span class="iconify text-primary text-xl" data-icon="solar:user-bold"></span>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Name</div>
+                                <div class="font-medium text-gray-900">Muhammad Ilham Pratama</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="iconify text-primary text-xl" data-icon="solar:map-point-bold"></span>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Location</div>
+                                <div class="font-medium text-gray-900">Depok, West Java, Indonesia</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="iconify text-primary text-xl" data-icon="solar:letter-bold"></span>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Email</div>
+                                <div class="font-medium text-gray-900">ilham.formal@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="iconify text-primary text-xl" data-icon="solar:case-bold"></span>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Status</div>
+                                <div class="font-medium text-green-600">Available for Hire</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="assets/Resume Ilham.pdf" download="Resume Ilham.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-xl transition-all">
+                        <span class="iconify" data-icon="solar:download-bold"></span>
+                        Download Resume
+                    </a>
+                </div>
+                <div class="reveal">
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8">
+                        <h4 class="font-bold text-gray-900 mb-6">Why Work With Me?</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="iconify text-primary text-xl" data-icon="healthicons:world-care"></span>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">Responsible & Ownership-Oriented</h5>
+                                    <p class="text-sm text-gray-500">
+                                        I have a strong sense of responsibility for every task I take on.
+                                        I don’t leave problems unfinished, especially in system development until a stable
+                                        and reliable solution is fully achieved.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="iconify text-primary text-xl" data-icon="fluent:brain-circuit-32-filled"></span>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">Strong Logical Thinking</h5>
+                                    <p class="text-sm text-gray-500">
+                                        Starting my career as a backend developer shaped my structured and logical way of thinking. <br/>
+                                        This allows me to analyze and solve problems effectively across various business processes.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="iconify text-primary text-xl" data-icon="lucide:replace-all"></span>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">Adaptive & Fast Learner</h5>
+                                    <p class="text-sm text-gray-500">
+                                        I adapt quickly to new technologies and challenges. <br/>
+                                        My career journey reflects this—from backend developer to fullstack developer—driven by my passion for learning and exploring new things.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="iconify text-primary text-xl" data-icon="solar:users-group-rounded-bold"></span>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">Independent & Team Player</h5>
+                                    <p class="text-sm text-gray-500">
+                                        As a fullstack developer, I can work independently to resolve system issues, while also collaborating effectively with teams to build impactful solutions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Experience</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Work History</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 reveal">
+                    <div class="relative lg:border-l-2 lg:border-primary/20 lg:pl-8 space-y-8">
+                        
+                        <div class="relative">
+                            <div class="timeline-dot border border-white rounded-full hidden lg:block absolute -left-[41px] top-16"></div>
+                            <div class="bg-white rounded-xl p-6 w-full">
+                                <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">Oct 2024 - Dec 2025</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Fullstack Engineer</h4>
+                                <p class="text-primary font-medium text-sm mb-3">Optimasi.ai • Malang (Remote)</p>
+                                <p class="text-gray-500 text-sm mb-3 break-words">
+                                    I handle several of business process as a full stack engineer, creating HR systems with laravel and Vue JS, I also handle a politician apps known as Nasdem for PPOB and Point system using React native and supabase app as a serverless backend, and then I also handle state intelligence agency systems to show data of scraping about social issue in any regions using laravel, python, LLM’s, and Vue JS
+                                </p>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Laravel</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Python</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">LLM's</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">PostgreSQL</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Supabase</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Vue JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">React JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Redis</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Github</span>
+                                </div>
+                                
+                                <!-- Projects Section -->
+                                <div class="border-t border-gray-100 pt-4">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Projects / Product Handled</p>
+                                    <div class="space-y-3">
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="material-symbols-light:mobile-2-outline" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Nasdem Super App</p>
+                                                <p class="text-xs text-gray-500 truncate">An application for task management, point redemption and PPOB</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mynaui:globe" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">State Intelligence Agency</p>
+                                                <p class="text-xs text-gray-500 truncate">An application to see a report, task management, and issue in every regions</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mynaui:globe" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">HR Management System</p>
+                                                <p class="text-xs text-gray-500 truncate">An application for HRD to managing an employee, recruiting, payroll, and more</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot border border-white rounded-full hidden lg:block absolute -left-[41px] top-16"></div>
+                            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                                <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">Jun 2023 - Aug 2024</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Fullstack Engineer</h4>
+                                <p class="text-primary font-medium text-sm mb-3">Berkah Venture • South Jakarta (Remote)</p>
+                                <p class="text-gray-500 text-sm mb-3 break-words">
+                                    Optimized load time speed for web application, handling big data almost 100.000 - 150.000 data per page, Do code optimization to get robust code and readable, adjust UX by myself to give better experience to user. Refactor and/or rewrite database schema.
+                                </p>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">React JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Bootstrap</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Laravel</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">PostgreSQL</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Redis</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">BitBucket</span>
+                                </div>
+                                
+                                <!-- Projects Section -->
+                                <div class="border-t border-gray-100 pt-4">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Projects / Product Handled</p>
+                                    <div class="space-y-3">
+                                        <!-- Project Item - Web -->
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mynaui:globe" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Udang.id</p>
+                                                <p class="text-xs text-gray-500 truncate">A web apps to selling, feeding, checking a shrimp</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Udang.id Rest API</p>
+                                                <p class="text-xs text-gray-500 truncate">An application to managing data for shrimp management system</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot border border-white rounded-full hidden lg:block absolute -left-[41px] top-16"></div>
+                            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                                <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">Mar 2021 - Jan 2023</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Fullstack Engineer</h4>
+                                <p class="text-primary font-medium text-sm mb-3">Alteacare • South Tangerang</p>
+                                <p class="text-gray-500 text-sm mb-3 break-words">
+                                    Developed video conference, ecommerce, and chat engine, handle various business models such as covid vaccine system, dashboard analytic, etc. Handle APIs that are hit by almost 1.200 users per second, create doctor and patient dashboard from scratch, collaborate with another team such as project manager, UI/UX designer and devOps, create unit test, and participate to give an innovation and convert into a solution.
+                                </p>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Strapi</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Node JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Express JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Microservices</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Docker</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">React JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Tailwind</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Next JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">PostgreSQL</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">MongoDB</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Redis</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Github</span>
+                                </div>
+                                
+                                <!-- Projects Section -->
+                                <div class="border-t border-gray-100 pt-4">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Projects / Product Handled</p>
+                                    <div class="space-y-3">
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mynaui:globe" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Alteacare Pharmacy CMS</p>
+                                                <p class="text-xs text-gray-500">An application for managing user purchase a medicine, doctor schedule, doctor online meeting, and ecommerce management</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mynaui:globe" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Alteacare Dashboard CMS</p>
+                                                <p class="text-xs text-gray-500 truncate">An application for managing content built with strapi</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Alteacare Ecommerce API</p>
+                                                <p class="text-xs text-gray-500 truncate">A microservices API for ecommerce and telemedicine dashboard</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot border border-white rounded-full hidden lg:block absolute -left-[41px] top-16"></div>
+                            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                                <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">Apr 2020 - May 2021</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Fullstack Engineer</h4>
+                                <p class="text-primary font-medium text-sm mb-3">Stackbuttler • Australia (Remote)</p>
+                                <p class="text-gray-500 text-sm mb-3 break-words">
+                                    I work as a freelance fullstack engineer, creating applications from scratch, collaborating with UI/UX designer and with direct CTO to ensure feature delivery as well, working with AGILE software development schema.
+                                </p>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Laravel</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Bootstrap</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">MariaDB</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Redis</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Vue JS</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Github</span>
+                                </div>
+                                
+                                <!-- Projects Section -->
+                                <div class="border-t border-gray-100 pt-4">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Projects / Product Handled</p>
+                                    <div class="space-y-3">
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mynaui:globe" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Stackbuttler.com</p>
+                                                <p class="text-xs text-gray-500 truncate">An web application for see the rating and/or review of paid application</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot hidden lg:block absolute -left-[41px] top-16 border border-white rounded-full"></div>
+                            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                                <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">Jan 2019 - Mar 2020</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Backend Engineer</h4>
+                                <p class="text-primary font-medium text-sm mb-3">Lapaktrip Indonesia • South Jakarta</p>
+                                <p class="text-gray-500 text-sm mb-3 break-words">
+                                    Maintained an existing web application using laravel and microservice, optimized APIs performance speed to get better experience in the website, and collaborated with various vendors such as nicepay, PLN, and others to support application needs. Also handle applications with up to 50.000 users.
+                                </p>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Laravel</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Microservices</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">MariaDB</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Redis</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Github</span>
+                                </div>
+                                
+                                <!-- Projects Section -->
+                                <div class="border-t border-gray-100 pt-4">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Projects / Product Handled</p>
+                                    <div class="space-y-3">
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Pesonalokal.com</p>
+                                                <p class="text-xs text-gray-500 truncate">The app is similiar with lapaktrip.com but this application is used by tour and travel vendor</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Lapaktrip.com</p>
+                                                <p class="text-xs text-gray-500 truncate">An application in website and mobile apps for selling tour ticket and also there is PPOB included</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot border border-white rounded-full hidden lg:block absolute -left-[41px] top-16"></div>
+                            <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                                <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs font-medium rounded-full">Mar 2018 - Nov 2019</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Backend Engineer</h4>
+                                <p class="text-primary font-medium text-sm mb-3">Codelabs Indonesia • South Tangerang</p>
+                                <p class="text-gray-500 text-sm mb-3 break-words">
+                                    Create and/or maintain software from various business models, also handle software with around 1000 - 10.000 users, solve any bug or issues in existing applications, learn and implement microservices.
+                                </p>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Codeigniter</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Laravel</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Microservices</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">MariaDB</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">MongoDB</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Redis</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Gitlab</span>
+                                </div>
+                                
+                                <!-- Projects Section -->
+                                <div class="border-t border-gray-100 pt-4">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Projects / Product Handled</p>
+                                    <div class="space-y-3">
+                                         <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Privileges (PVG)</p>
+                                                <p class="text-xs text-gray-500 truncate">An application of point system such as PONTA, user can do a redemption with flight ticket or something that related with tour and travel</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">POS (Point of Sales) system</p>
+                                                <p class="text-xs text-gray-500 truncate">An application for selling management system, used by UMKM</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Refill My Bottle</p>
+                                                <p class="text-xs text-gray-500 truncate">An application for users refill water with their tumblers in Bali, Indonesia</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                        <a href="#" class="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors">
+                                            <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 transition-colors">
+                                                <span data-icon="mdi:api" class="iconify text-xl text-gray-400 group-hover:text-primary transition-colors"></span>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">Lifespa Fitness</p>
+                                                <p class="text-xs text-gray-500 truncate">Built and maintenance system of employee & booking management</p>
+                                            </div>
+                                            <span data-icon="solar:arrow-right-linear" class="iconify text-lg text-gray-300 group-hover:text-primary transition-colors"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="sticky top-24 space-y-6">
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                <span class="iconify text-primary" data-icon="solar:square-academic-cap-bold"></span>
+                                Education
+                            </h4>
+                            <div class="border-l-2 border-primary/20 pl-4">
+                                <span class="text-xs text-gray-500">Aug 2013 - Oct 2018</span>
+                                <h5 class="font-semibold text-gray-900">Bachelor's Degree</h5>
+                                <p class="text-primary text-sm font-medium">Informatic Engineering</p>
+                                <p class="text-gray-500 text-sm">Pamulang University</p>
+                                <p class="text-gray-400 text-xs mt-1">GPA: 3.1</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-primary to-primaryDark rounded-xl p-6 text-white">
+                            <h4 class="font-bold mb-4">Career Highlights</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-white/80 text-sm">Total Experience</span>
+                                    <span class="font-bold"><span class="experience"></span>+ Years</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-white/80 text-sm">Projects Completed</span>
+                                    <span class="font-bold">20+ Projects</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-white/80 text-sm">Company Collaborated</span>
+                                    <span class="font-bold">5+ Companis</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-white/80 text-sm">Industry Experience</span>
+                                    <span class="font-bold">15+ Industries</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-gray-900 mb-4">Industries</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="iconify text-red-500" data-icon="solar:heart-pulse-bold"></span>
+                                    <span class="text-gray-600 text-sm">Healthcare / Telemedicine</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="iconify text-blue-500" data-icon="mdi:airplane"></span>
+                                    <span class="text-gray-600 text-sm">Tour & Travel</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="iconify text-purple-500" data-icon="solar:code-square-bold"></span>
+                                    <span class="text-gray-600 text-sm">Software House (SaaS)</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="iconify text-amber-500" data-icon="solar:buildings-bold"></span>
+                                    <span class="text-gray-600 text-sm">Government</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Featured Projects</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">A showcase of projects I've built with various technologies and industries</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 reveal">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-primary text-white" data-filter="all">All Type</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200" data-filter="fullstack">Fullstack</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200" data-filter="backend">Backend</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200" data-filter="frontend">Frontend</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Projects will be rendered by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center gap-2 mt-10 reveal" id="pagination">
+                <!-- Pagination will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Expertise</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Skills & Technologies</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="reveal bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="iconify text-blue-600 text-2xl" data-icon="solar:monitor-bold"></span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-4">Frontend</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-yellow-500" data-icon="logos:javascript"></span>
+                            <span class="text-gray-600 text-sm">JavaScript Native</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-cyan-500" data-icon="logos:react"></span>
+                            <span class="text-gray-600 text-sm">React JS / Next JS / React Native</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-green-500" data-icon="logos:vue"></span>
+                            <span class="text-gray-600 text-sm">Vue JS / Nuxt JS</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-cyan-500" data-icon="logos:tailwindcss-icon"></span>
+                            <span class="text-gray-600 text-sm">Tailwind / Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="iconify text-green-600 text-2xl" data-icon="solar:server-bold"></span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-4">Backend</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-purple-500" data-icon="logos:php"></span>
+                            <span class="text-gray-600 text-sm">PHP / Laravel</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-green-500" data-icon="logos:nodejs-icon"></span>
+                            <span class="text-gray-600 text-sm">Node JS / Express JS</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-orange-500" data-icon="logos:codeigniter-icon"></span>
+                            <span class="text-gray-600 text-sm">CodeIgniter</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-red-500" data-icon="logos:ruby"></span>
+                            <span class="text-gray-600 text-sm">Ruby on Rails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="iconify text-purple-600 text-2xl" data-icon="solar:database-bold"></span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-4">Database</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-blue-500" data-icon="logos:mysql"></span>
+                            <span class="text-gray-600 text-sm">MySQL / MariaDB</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-blue-500" data-icon="logos:sqlite"></span>
+                            <span class="text-gray-600 text-sm">SQLite</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-blue-600" data-icon="logos:postgresql"></span>
+                            <span class="text-gray-600 text-sm">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-green-500" data-icon="logos:mongodb-icon"></span>
+                            <span class="text-gray-600 text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-red-500" data-icon="logos:redis"></span>
+                            <span class="text-gray-600 text-sm">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="iconify text-orange-600 text-2xl" data-icon="solar:settings-bold"></span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-4">Tools & DevOps</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-blue-500" data-icon="logos:docker-icon"></span>
+                            <span class="text-gray-600 text-sm">Docker</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-gray-700" data-icon="logos:github-icon"></span>
+                            <span class="text-gray-600 text-sm">Git / GitHub / GitLab</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-cyan-500" data-icon="logos:typescript-icon"></span>
+                            <span class="text-gray-600 text-sm">Typescript</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-purple-500" data-icon="solar:cpu-bolt-bold"></span>
+                            <span class="text-gray-600 text-sm">Microservices</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-purple-500" data-icon="logos:nginx"></span>
+                            <span class="text-gray-600 text-sm">Nginx</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify text-purple-500" data-icon="material-icon-theme:supabase"></span>
+                            <span class="text-gray-600 text-sm">Supabase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 reveal">
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-6 text-center">Soft Skills</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Time Management</span>
+                        <span class="px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium">Leadership</span>
+                        <span class="px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">Problem Solving</span>
+                        <span class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">Decision Making</span>
+                        <span class="px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium">Teamwork</span>
+                        <span class="px-4 py-2 bg-pink-50 text-pink-700 rounded-full text-sm font-medium">Fast Learner</span>
+                        <span class="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium">English Proficiency</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">Contact</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Let's Work Together</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Have a project in mind? Let's connect!</p>
+            </div>
+            <div class="grid lg:grid-cols-5 gap-12">
+                <div class="lg:col-span-2 reveal">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="iconify text-primary text-xl" data-icon="solar:letter-bold"></span>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Email</div>
+                                <a href="mailto:ilham.formal@gmail.com" class="font-medium text-gray-900 hover:text-primary transition-colors">ilham.formal@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="iconify text-primary text-xl" data-icon="solar:phone-bold"></span>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Phone / WhatsApp</div>
+                                <a href="tel:+6283871028000" class="font-medium text-gray-900 hover:text-primary transition-colors">+62 838 7102 8000</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="iconify text-primary text-xl" data-icon="solar:map-point-bold"></span>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Location</div>
+                                <div class="font-medium text-gray-900">Depok, West Java, Indonesia</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-sm text-gray-500 mb-4">Connect with me</p>
+                        <div class="flex gap-3">
+                            <a href="https://www.linkedin.com/in/muhammad-ilham-pratama/" class="w-10 h-10 bg-gray-100 hover:bg-primary hover:text-white rounded-lg flex items-center justify-center text-gray-600 transition-all">
+                                <span class="iconify text-lg" data-icon="mdi:linkedin"></span>
+                            </a>
+                            <a href="https://github.com/litle-project" class="w-10 h-10 bg-gray-100 hover:bg-black hover:text-white rounded-lg flex items-center justify-center text-gray-600 transition-all">
+                                <span class="iconify text-lg" data-icon="mdi:github"></span>
+                            </a>
+                            <a href="https://wa.me/6283871028000" class="w-10 h-10 bg-gray-100 hover:bg-green-500 hover:text-white rounded-lg flex items-center justify-center text-gray-600 transition-all">
+                                <span class="iconify text-lg" data-icon="mdi:whatsapp"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 reveal">
+                    <form method="post" action="https://formspree.io/f/mykkgolj" class="bg-gray-50 rounded-2xl p-8">
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-gray-600 text-sm font-medium mb-2">Full Name</label>
+                                <input name="name" type="text" placeholder="John Doe" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-gray-700 placeholder-gray-400">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 text-sm font-medium mb-2">Email</label>
+                                <input name="email" type="email" placeholder="john@company.com" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-gray-700 placeholder-gray-400">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-600 text-sm font-medium mb-2">Subject</label>
+                            <input name="subject" type="text" placeholder="Project Discussion" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-gray-700 placeholder-gray-400">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-600 text-sm font-medium mb-2">Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell me about your project..." class="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-gray-700 placeholder-gray-400 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 bg-primary hover:bg-primaryDark text-white font-semibold rounded-xl transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                            <span class="iconify" data-icon="solar:plain-bold"></span>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-gray-400 text-sm">© 2024 Muhammad Ilham Pratama. All rights reserved.</div>
+                <div class="flex items-center gap-2 text-gray-400 text-sm">Made with <span class="iconify text-red-500" data-icon="solar:heart-bold"></span> in Indonesia</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary hover:bg-primaryDark rounded-full flex items-center justify-center text-white shadow-lg transition-all opacity-0 invisible z-40">
+        <span class="iconify text-xl" data-icon="solar:alt-arrow-up-linear"></span>
+    </button>
+
+    <script>
+        // Projects Data
+        const projects = [
+            {
+                title: "Nasdem Superapp",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Jan 2025 - Aug 2025",
+                description: "This application is designed to enable users to complete missions and earn rewards. It integrates with Rajabiller for PPOB services and Midtrans for secure payment processing. The points earned from missions can be redeemed for mobile credit or other PPOB products.",
+                tech: ["React Native", "Tailwind", "Supabase", "Iconify"],
+                badge: "Government",
+                badgeColor: "bg-purple-600",
+                url: null,
+                image: "assets/projects/nasdem.jpg"
+            },
+            {
+                title: "State Intelligence Agency (Intelgrid)",
+                category: "backend",
+                type: "Backend",
+                date: "Jan 2025 - Aug 2025",
+                description: "This application is used to generate inter-regional reports, summarize incidents that occur across different areas, and monitor issues happening between regions.",
+                tech: ["Laravel", "Python", "PostgreSQL", "Docker", "LLMs"],
+                badge: "Government",
+                badgeColor: "bg-purple-600",
+                url: null,
+                image: "assets/projects/intelgrid.jpg"
+            },
+            {
+                title: "The Dailytax",
+                category: "backend",
+                type: "Backend",
+                date: "Jan 2025 - Aug 2025",
+                description: "This application is designed to manage tax administration, perform tax calculations, generate accounting reports, and support overall accounting management.",
+                tech: ["Express JS", "PostgreSQL", "Redis"],
+                badge: "Finance",
+                badgeColor: "bg-emerald-600",
+                url: null,
+                image: "assets/projects/dailytax.jpg"
+            },
+            {
+                title: "e-Pantau - PPSU & GU",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Oct 2024 - Dec 2024",
+                description: "This application is used to monitor street cleaning officers on a map based on predefined locations. The officers can submit reports and record their attendance through the system.",
+                tech: ["Laravel", "Tailwind", "Vanilla JS", "Monolith"],
+                badge: "Government",
+                badgeColor: "bg-purple-600",
+                url: null,
+                image: "assets/projects/epantau.jpg"
+            },
+            {
+                title: "Digital Office - KEMENHUB",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Oct 2024 - Dec 2024",
+                description: "This application is used for attendance tracking, sending official letters, viewing subordinates’ attendance data, managing tasks and leave requests, and supporting internal digital signatures.",
+                tech: ["React Native", "Tailwind", "Laravel", "PostgreSQL", "Docker", "Redis"],
+                badge: "Government",
+                badgeColor: "bg-purple-600",
+                url: null,
+                image: "assets/projects/nushub.jpg"
+            },
+            {
+                title: "HR Dashboard",
+                category: "frontend",
+                type: "Frontend",
+                date: "Oct 2024 - Dec 2024",
+                description: "This application is used to manage job candidates throughout the recruitment process using AI-assisted background analysis and interview scheduling.",
+                tech: ["Nuxt JS", "Tailwind", "Docker"],
+                badge: "Enterprise",
+                badgeColor: "bg-slate-600",
+                url: null,
+                image: "assets/projects/hr-analytic.jpg"
+            },
+            {
+                title: "Bumi Daya Plaza",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Sep 2024 - Feb 2025",
+                description: "This application is used to manage and control task instructions between supervisors and subordinates across divisions.",
+                tech: ["Laravel", "React JS", "PostgreSQL", "Redis"],
+                badge: "Enterprise",
+                badgeColor: "bg-slate-600",
+                url: null,
+                image: "assets/projects/bumidaya.jpg"
+            },
+            {
+                title: "Surfergirl",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Jan 2024 - Jul 2024",
+                description: "This application is used for POS management including inventory, warehouse operations, accounting, and tax handling.",
+                tech: ["Laravel", "Nuxt JS", "PostgreSQL", "Docker"],
+                badge: "Retail",
+                badgeColor: "bg-green-600",
+                url: null,
+                image: "assets/projects/surfer.jpg"
+            },
+            {
+                title: "Omsetku",
+                category: "frontend",
+                type: "Frontend",
+                date: "Jan 2024 - Jul 2024",
+                description: "This application is used to manage inventory, accounting, sales tracking, and customer management.",
+                tech: ["Laravel", "Vue JS", "PostgreSQL", "Docker"],
+                badge: "Retail",
+                badgeColor: "bg-green-600",
+                url: null,
+                image: "assets/projects/omsetku.jpg"
+            },
+            {
+                title: "Dermagistry",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Aug 2024 - Sep 2024",
+                description: "This application provides customizable digital medical questionnaires similar to Google Forms.",
+                tech: ["Laravel", "Vanilla JS", "Bootstrap 5", "MariaDB"],
+                badge: "Health Care",
+                badgeColor: "bg-teal-600",
+                url: null,
+                image: "assets/projects/dermagistry.jpg"
+            },
+            {
+                title: "Telkom DBM 360",
+                category: "backend",
+                type: "Backend",
+                date: "Oct 2022 - Sep 2023",
+                description: "This application analyzes Google Analytics data to monitor ads performance and customer conversions.",
+                tech: ["Laravel", "Nuxt JS", "Docker", "Google Services"],
+                badge: "Marketing",
+                badgeColor: "bg-pink-600",
+                url: null,
+                image: "assets/projects/dbm.jpg"
+            },
+            {
+                title: "Sepaket",
+                category: "backend",
+                type: "Backend",
+                date: "May - Aug 2022",
+                description: "This application enables users to check shipping rates and create logistics orders integrated with multiple couriers.",
+                tech: ["Node JS", "Express", "PostgreSQL", "Docker"],
+                badge: "Logistic",
+                badgeColor: "bg-blue-600",
+                url: null,
+                image: "assets/projects/sepaket.jpg"
+            },
+            {
+                title: "Penakita",
+                category: "backend",
+                type: "Backend",
+                date: "Sep - Nov 2021",
+                description: "This application helps discover writers, manage content campaigns, and run digital project auctions.",
+                tech: ["Node JS", "Express", "PostgreSQL", "Docker"],
+                badge: "Enterprise",
+                badgeColor: "bg-slate-600",
+                url: null,
+                image: "assets/projects/penakita.jpg"
+            },
+            {
+                title: "JTKMS (SAP Integration)",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Aug - Sep 2021",
+                description: "This application manages vendors, construction timelines, budgets, inventory flow, and SAP integration.",
+                tech: ["Laravel", "MySQL", "SAP", "Monolith"],
+                badge: "Enterprise",
+                badgeColor: "bg-slate-600",
+                url: null,
+                image: "assets/projects/jtkms.jpg"
+            },
+            {
+                title: "Gotoko",
+                category: "frontend",
+                type: "Frontend",
+                date: "Apr - Aug 2021",
+                description: "This application tracks marketing campaigns, manages inventory, and analyzes sales performance.",
+                tech: ["Next JS", "Redux", "Bootstrap"],
+                badge: "Retail",
+                badgeColor: "bg-green-600",
+                url: null,
+                image: "assets/projects/gotoko.jpg"
+            },
+            {
+                title: "BBPT - BBTMC (BRIN)",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Dec 2020 - Jan 2021",
+                description: "This application manages employee records, attendance, and internal documents.",
+                tech: ["Laravel", "Vue JS", "MySQL", "Redis"],
+                badge: "Government",
+                badgeColor: "bg-purple-600",
+                url: null,
+                image: "assets/projects/bbtmc.jpg"
+            },
+            {
+                title: "Lykos",
+                category: "backend",
+                type: "Backend",
+                date: "Mar - Jul 2020",
+                description: "This application supports recruitment and assessment management for the F&B industry.",
+                tech: ["Laravel", "MariaDB", "Firebase", "Redis"],
+                badge: "Enterprise",
+                badgeColor: "bg-slate-600",
+                url: null,
+                image: "assets/projects/fnbnation.jpg"
+            },
+            {
+                title: "All About Jazz",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Aug - Oct 2020",
+                description: "This application manages jazz events, ticket sales, fan meetups, and jazz instrument trading.",
+                tech: ["Laravel", "MariaDB", "Microservices", "Redis"],
+                badge: "Entertainment",
+                badgeColor: "bg-rose-600",
+                url: null,
+                image: "assets/projects/allaboutjazz.jpg"
+            },
+            {
+                title: "Belanjapuas.com",
+                category: "backend",
+                type: "Backend",
+                date: "Apr - Jul 2018",
+                description: "This application facilitates single-store e-commerce transactions.",
+                tech: ["CodeIgniter", "MySQL", "Midtrans"],
+                badge: "Retail",
+                badgeColor: "bg-green-500",
+                url: null,
+                image: "assets/projects/belanjapuas.jpg"
+            },
+            {
+                title: "Anekapromosi",
+                category: "fullstack",
+                type: "Fullstack",
+                date: "Jul - Sep 2019",
+                description: "This application supports merchandise sales and digital branding to improve SEO rankings.",
+                tech: ["CodeIgniter", "MySQL"],
+                badge: "Marketing",
+                badgeColor: "bg-pink-600",
+                url: null,
+                image: "assets/projects/aneka-promosi.jpg"
+            }
+        ];
+
+
+        // Pagination Config
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+        let currentFilter = 'all';
+
+        // Filter projects
+        function getFilteredProjects() {
+            if (currentFilter === 'all') return projects;
+            return projects.filter(p => p.category === currentFilter);
+        }
+
+        // Render projects
+        function renderProjects() {
+            const filtered = getFilteredProjects();
+            const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageProjects = filtered.slice(start, end);
+
+            const grid = document.getElementById('projectsGrid');
+            grid.innerHTML = pageProjects.map((project, index) => `
+                <div class="project-card card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" style="animation-delay: ${index * 0.1}s">
+                    <div class="aspect-video bg-gray-100 relative overflow-hidden">
+                        ${project.image 
+                            ? `<img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML = '<div class=\\'w-full h-full flex items-center justify-center bg-gray-50\\'><span data-icon=\\'solar:gallery-broken\\' class=\\'iconify text-5xl text-gray-300\\'></span></div><span class=\\'absolute top-3 right-3 px-2 py-1 ${project.badgeColor} text-white text-xs rounded-full\\'>${project.badge}</span>'" />`
+                            : `<div class="w-full h-full flex items-center justify-center bg-gray-50">
+                                <span data-icon="solar:gallery-broken" class="iconify text-5xl text-gray-300"></span>
+                            </div>`
+                        }
+                        <span class="absolute top-3 right-3 px-2 py-1 ${project.badgeColor} text-white text-xs rounded-full">${project.badge}</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs font-medium rounded">${project.type}</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded">${project.date}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">${project.title}</h3>
+                        <p class="text-gray-500 text-sm mb-4">${project.description}</p>
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            ${project.tech.map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded">${t}</span>`).join('')}
+                        </div>
+                        ${project.url ? `
+                            <a href="${project.url}" target="_blank" class="text-primary hover:text-primaryDark font-medium text-sm flex items-center gap-1">
+                                Visit Site <span class="iconify" data-icon="solar:arrow-right-up-linear"></span>
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            renderPagination(totalPages);
+        }
+
+        // Render pagination
+        function renderPagination(totalPages) {
+            const pagination = document.getElementById('pagination');
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let html = `
+                <button class="pagination-btn w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200" 
+                        onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                    <span class="iconify" data-icon="solar:alt-arrow-left-linear"></span>
+                </button>
+            `;
+
+            for (let i = 1; i <= totalPages; i++) {
+                html += `
+                    <button class="pagination-btn w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200 ${currentPage === i ? 'active' : ''}" 
+                            onclick="changePage(${i})">${i}</button>
+                `;
+            }
+
+            html += `
+                <button class="pagination-btn w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200" 
+                        onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <span class="iconify" data-icon="solar:alt-arrow-right-linear"></span>
+                </button>
+            `;
+
+            pagination.innerHTML = html;
+        }
+
+        // Change page
+        function changePage(page) {
+            const filtered = getFilteredProjects();
+            const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderProjects();
+            document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Filter click handlers
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white');
+                    b.classList.add('bg-gray-100', 'text-gray-600');
+                });
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                btn.classList.remove('bg-gray-100', 'text-gray-600');
+                currentFilter = btn.dataset.filter;
+                currentPage = 1;
+                renderProjects();
+            });
+        });
+
+        // Initial render
+        renderProjects();
+
+        // Mobile menu
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+        });
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Reveal animation
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+    <script>
+        (function() {
+            const startYear = 2018;
+            const currentYear = new Date().getFullYear();
+            const elements = document.getElementsByClassName('experience')
+
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].innerHTML = currentYear - startYear;
+            }
+
+            
+        })()
+    </script>
+</body>
 </html>
